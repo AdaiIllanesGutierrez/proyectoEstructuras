@@ -27,7 +27,7 @@ void mostrarMenuPrincipal()
   puts("========================================");
 
   puts("1) Agregar tarea pendiente");
-  puts("2) Asignar prioridad");
+  
   puts("3) Mostrar tareas pendientes");
   puts("4) Eliminar tarea completada ");
   puts("5) Buscar tarea");
