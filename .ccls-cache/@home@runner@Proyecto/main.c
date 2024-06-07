@@ -9,10 +9,7 @@ int id;
 char* titulo;
 time_t hora_registro;
 int prioridad;
-
-
 List* list;
-
 }Tarea;
 
 void limpiarPantalla() { system("clear"); }
