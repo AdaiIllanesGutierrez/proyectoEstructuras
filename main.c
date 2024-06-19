@@ -111,7 +111,7 @@ void AgregarTareasPendientes (List *tarea)
   if(alternativa == 2)
   {
     limpiarPantalla();
-    mostrarMenuPrincipal();
+    //mostrarMenuPrincipal();
   }
   if(alternativa != 1 && alternativa != 2)
   {
@@ -171,7 +171,7 @@ void AsignarPrioridad (List *tarea)
   if(alternativa == 2)
   {
     limpiarPantalla();
-    mostrarMenuPrincipal();
+    //mostrarMenuPrincipal();
   }
   
 }
@@ -211,13 +211,15 @@ int main() {
     switch (opcion)
     {
     case '1':
-      AgregarTareasPendientes(tareas);
       limpiarPantalla();
+      AgregarTareasPendientes(tareas);
       break;
     case '2':
+      limpiarPantalla();
       AsignarPrioridad(tareas);
       break;
     case '3':
+      limpiarPantalla();
       MostrarTareasPendientes(tareas);
       break;
     case '4':
