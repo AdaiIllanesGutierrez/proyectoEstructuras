@@ -31,16 +31,17 @@ void presioneTeclaParaContinuar() {
 
 void mostrarMenuPrincipal() {
   puts("========================================");
-  puts("     Sistema de Gestor de tareas");
+  puts("|    Sistema de Gestor de tareas       |");
+  puts("|======================================|");
+  puts("| 1) Agregar tarea pendiente           |");
+  puts("| 2) Asignar prioridad                 |");
+  puts("| 3) Mostrar tareas pendientes         |");
+  puts("| 4) Modificar Tarea                   |");
+  puts("| 5) Buscar tarea                      |");
+  puts("| 6) Eliminar tarea completada         |");
+  puts("| 7) Salir                             |");
   puts("========================================");
 
-  puts("1) Agregar tarea pendiente");
-  puts("2) Asignar prioridad");
-  puts("3) Mostrar tareas pendientes");
-  puts("4) Modificar Tarea ");
-  puts("5) Buscar tarea");
-  puts("6) Eliminar tarea completada");
-  puts("7) Salir");
 }
 /*SUBMENU MODO BETA
 
@@ -174,8 +175,7 @@ void AsignarPrioridad (List *tarea)
   {
     limpiarPantalla();
     //mostrarMenuPrincipal();
-  }
-  
+  }  
 }
 
 void MostrarTareasPendientes(List *tarea) {
