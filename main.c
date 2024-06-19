@@ -91,7 +91,7 @@ void AgregarTareasPendientes (List *tarea)
                         &pendiente -> fecha_limite.mes,
                         &pendiente -> fecha_limite.anyo);
   printf("Ingrese dificultad de la tarea pendiente: ");
-  scanf("d", &pendiente -> dificultad);
+  scanf("%d", &pendiente -> dificultad);
 
   list_pushBack(tarea, pendiente);
   
@@ -147,6 +147,8 @@ void AsignarPrioridad (List *tarea) {
   */
 
 
+//version 1 
+//la prioridad no se guarda pendiente
 void AsignarPrioridad (List *tarea)
 {
   tipoTarea *prioridad = (tipoTarea *)malloc(sizeof(tipoTarea));
@@ -216,7 +218,9 @@ int main() {
       break;
     case '2':
       limpiarPantalla();
-      AsignarPrioridad(tareas);
+      //pendiente
+      //implementar mapas paa hacer mas facil la busueda y cambiar la prioridad
+      AsignarPrioridad(tareas);// con errores 
       break;
     case '3':
       limpiarPantalla();
