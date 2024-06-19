@@ -11,13 +11,13 @@ typedef struct {
 } FechaLimite;
 
 typedef struct {
-int id;
+// int id; podriamos usar el titulo como clave 
 char titulo[100];
 char descripcionTarea[200];
 time_t fecha_creacion;
 FechaLimite fecha_limite;
-int prioridad;
-int dificultad;
+int prioridad; // de 1 a 3, el 1(priridad maxima) y el 3 (como prioridad minima)
+int dificultad; // de 1 a 5 referenciando la dificultad del 1 al 5
 } tipoTarea;
 
 void limpiarPantalla() { 
@@ -87,9 +87,11 @@ void AgregarTareasPendientes (List *tarea)
   printf("Ingrese una descripcion de la tarea pendiente: ");
   scanf("%s", pendiente -> descripcionTarea);
   printf("Ingrese fecha limite de la tarea  formato dd/mm/aaaa pendiente: ");
-  scanf("%d / %d / %d", &pendiente -> fecha_limite.dia,
+  scanf("%d/%d/%d", &pendiente -> fecha_limite.dia,
                         &pendiente -> fecha_limite.mes,
                         &pendiente -> fecha_limite.anyo);
+  printf("Ingrese dificultad de la tarea pendiente: ");
+  scanf("d", &pendiente -> dificultad);
 
   list_pushBack(tarea, pendiente);
   
@@ -175,7 +177,26 @@ void AsignarPrioridad (List *tarea)
 }
 
 void MostrarTareasPendientes(List *tarea) {
-  
+  if (list_first(tarea) == NULL) {
+    printf("No hay tareas pendientes.\n");
+    return;
+  }
+
+  printf("Tareas pendientes: \n");
+  printf("=========================================\n");
+  tipoTarea *tareaActual = list_first(tarea);
+  while (tareaActual != NULL) {
+    printf("Título: %s\n", tareaActual -> titulo);
+    printf("Descripción: %s\n", tareaActual -> descripcionTarea);
+    // printf("Fecha de creación: %d/%d/%d\n", tareaActual -> fecha_cracion);
+    printf("Fecha de entrega: %d/%d/%d\n", tareaActual -> fecha_limite.dia,
+                                           tareaActual -> fecha_limite.mes,
+                                           tareaActual -> fecha_limite.anyo);
+    printf("Prioridad: %d\n", tareaActual -> prioridad);
+    printf("Dificultad: %d\n", tareaActual -> dificultad);
+    printf("=========================================\n");
+    tareaActual = list_next(tarea);
+  }
 }
 
 int main() {
@@ -200,13 +221,13 @@ int main() {
       MostrarTareasPendientes(tareas);
       break;
     case '4':
-      //ModificarTarea();
+      //ModificarTarea(tareas);
       break;
     case '5':
-      //BuscarTareas();
+      //BuscarTareas(tareas);
       break;
     case '6':
-      //EliminarTareaCompletada();
+      //EliminarTareaCompletada(tareas);
       break;
       case '7':
       puts("Saliendo...\n");
