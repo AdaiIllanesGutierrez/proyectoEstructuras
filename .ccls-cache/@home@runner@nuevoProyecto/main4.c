@@ -167,7 +167,7 @@ void AgregarTareasPendientes(Map *tareasTitulo, Map *tareasFecha, List *listaTar
     
 }
 
-//Esta funciom mostrara la lista de tareas pendientes
+//Esta funcion mostrara la lista de tareas pendientes
 void MostrarTareasPendientes(List *listaTareas) {
     
     if (list_first(listaTareas) == NULL) {
