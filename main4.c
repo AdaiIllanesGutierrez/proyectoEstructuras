@@ -191,7 +191,7 @@ void MostrarTareasPendientes(List *listaTareas) {
     }
 }
 
-//
+//Esta funcion asignara prioridad a las tareas modificando el valor predeterminado
 void AsignarPrioridad(Map *tareasTitulo, List *listaTareas) {
     char titulo[100];
     int nuevaPrioridad;
@@ -221,7 +221,7 @@ void AsignarPrioridad(Map *tareasTitulo, List *listaTareas) {
     }
 }
 
-//
+//Esta funcion permitira realizar una modificacion en los parametros de la tarea
 void ModificarTarea(Map *tareasTitulo, Map *tareasFecha, List *listaTareas) {
     char titulo[100];
     char opcionModificar;
@@ -293,7 +293,7 @@ void ModificarTarea(Map *tareasTitulo, Map *tareasFecha, List *listaTareas) {
     }
 }
 
-//
+//Esta funcion facilitara la busqueda de tareas por titulo o por fecha
 void BuscarTarea(Map *tareasTitulo, Map *tareasFecha) {
     char opcionBuscar;
     char titulo[100];
@@ -355,7 +355,7 @@ void BuscarTarea(Map *tareasTitulo, Map *tareasFecha) {
     }
 }
 
-//
+//Esta funcion nos permitt
 void EliminarTareaCompletada(Map *tareasTitulo, Map *tareasFecha, List *listaTareas) {
     char titulo[100];
 
