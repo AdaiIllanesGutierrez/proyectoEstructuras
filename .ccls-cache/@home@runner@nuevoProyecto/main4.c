@@ -355,7 +355,7 @@ void BuscarTarea(Map *tareasTitulo, Map *tareasFecha) {
     }
 }
 
-//Esta funcion nos permitt
+//Esta funcion va a permitir ir eliminando tareas ya completadas
 void EliminarTareaCompletada(Map *tareasTitulo, Map *tareasFecha, List *listaTareas) {
     char titulo[100];
 
@@ -424,26 +424,38 @@ int main() {
             case '1':
                 limpiarPantalla();
                 AgregarTareasPendientes(tareasTitulo, tareasFecha, listaTareas);
+                presioneTeclaParaContinuar();
+                limpiarPantalla();
                 break;
             case '2':
                 limpiarPantalla();
                 AsignarPrioridad(tareasTitulo, listaTareas);
+                presioneTeclaParaContinuar();
+                limpiarPantalla();
                 break;
             case '3':
                 limpiarPantalla();
                 MostrarTareasPendientes(listaTareas);
+                presioneTeclaParaContinuar();
+                limpiarPantalla();
                 break;
             case '4':
                 limpiarPantalla();
                 ModificarTarea(tareasTitulo, tareasFecha, listaTareas);
+                presioneTeclaParaContinuar();
+                limpiarPantalla();
                 break;
             case '5':
                 limpiarPantalla();
                 BuscarTarea(tareasTitulo, tareasFecha);
+                presioneTeclaParaContinuar();
+                limpiarPantalla();
                 break;
             case '6':
                 limpiarPantalla();
                 EliminarTareaCompletada(tareasTitulo, tareasFecha, listaTareas);
+                presioneTeclaParaContinuar();
+                limpiarPantalla();
                 break;
             case '7':
                 puts("Saliendo...\n");
